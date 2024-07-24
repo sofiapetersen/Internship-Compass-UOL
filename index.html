@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cine Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="siteTitle">Cine Hub</h1>
+    </header>
+    <form id="registrationForm" style="display:none;">
+        <label>User Type:</label>
+        <div class="radio-group">
+            <label><input type="radio" id="user" name="userType" value="user" checked> User</label>
+            <label><input type="radio" id="director" name="userType" value="director"> Director</label>
+        </div>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <div id="userFields">
+            <label for="favoriteMovie">Favorite Movie:</label>
+            <input type="text" id="favoriteMovie" name="favoriteMovie">
+        </div>
+
+        <div id="directorFields" style="display: none;">
+            <label for="latestMovie">Latest Movie Released:</label>
+            <input type="text" id="latestMovie" name="latestMovie">
+
+            <label for="imdbLink">IMDb Link:</label>
+            <input type="text" id="imdbLink" name="imdbLink">
+        </div>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Welcome to Cine Hub</h2>
+            <button id="createAccountButton">Create Account</button>
+            <button id="checkAccountButton">Check Account</button>
+        </div>
+    </div>
+
+    <div class="list-container" id="listContainer">
+        <button id="listUsersButton" class="type-button">Users</button>
+        <button id="listDirectorsButton" class="type-button">Directors</button>
+        <ul id="accountList"></ul>
+    </div>
+
+    <div class="account-popup" id="accountPopup" style="display:none;">
+        <div class="account-popup-content" id="accountPopupContent">
+            <button id="closeAccountPopup">Close</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
