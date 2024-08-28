@@ -19,6 +19,11 @@ for(let i = 0; i < boxes.length; i++){
         if(playerOne == playerTwo){ 
               el = x; 
               playerOne++;
+
+              if(secondPlayer == 'computer'){
+                  computerPlay();
+                  playerTwo++;
+              }
        }else{
               el = o;
               playerTwo++;
@@ -31,6 +36,23 @@ for(let i = 0; i < boxes.length; i++){
        }
 
     });
+}
+
+
+for(let i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener("click", function(){
+        secondPlayer = this.getAttribute("id");
+
+        for(let j = 0; j < buttons.length; j++){
+            buttons[j].style.display = "none";
+        }
+
+        setTimeout(function(){
+            let container = document.querySelector("#container");
+            container.classList.remove("hide");
+        }, 300);
+    });
+
 }
 
 
@@ -182,3 +204,19 @@ function declareWinner(winner) {
     }
 }
 
+
+function computerPlay() {
+    let cloneO = o.cloneNode(true);
+    let availableBoxes = [];
+
+    for (let i = 0; i < boxes.length; i++) {
+        if (boxes[i].childNodes.length == 0) {
+            availableBoxes.push(boxes[i]);
+        }
+    }
+
+    if (availableBoxes.length > 0) {
+        let randomBox = availableBoxes[Math.floor(Math.random() * availableBoxes.length)];
+        randomBox.appendChild(cloneO);
+    }
+}

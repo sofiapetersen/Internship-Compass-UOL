@@ -1,0 +1,34 @@
+<div id="add-form-container" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Share a Job</h1>
+            </div>
+            <div id="form-box" class="col-md-12">
+                <form action="/jobs/add" method="POST">
+                    <div class="form-group">
+                        <label for="title">Job Title:</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Type the job title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea type="text" class="form-control" id="description" name="description" placeholder="Type the job description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company:</label>
+                        <input type="text" class="form-control" id="company" name="company" placeholder="Type the company name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Type your email for contact" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="salaray">Salary:</label>
+                        <input type="text" class="form-control" id="salary" name="salary" placeholder="Type the job salary" required>
+                    </div>
+                    <input type="hidden" name="new_job" value="1">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
